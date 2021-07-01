@@ -18,8 +18,8 @@
 
     <div class="content">
       <div class="container">
-        {% block header %}
         <header>
+        {% block header %}
           <a href="{% if 'logged_in' in session %}{{ url_for('main.lookup') }}{% else %}{{ url_for('main.index') }}{% endif %}" class="no-bottom-border">
             {# FIXME:
             <img src="{{ g.logo }}" class="logo small" alt="{{ g.organization_name }} | {{ gettext('SecureDrop Home') }}" width="250">
@@ -27,8 +27,8 @@
             {{ g.organization_name }} | {{ gettext('SecureDrop Home')}}
           </a>
           {% include 'locales.html' %}
-        </header>
         {% endblock %}
+        </header>
 
         <main>
           {% if g.show_offline_message %}
