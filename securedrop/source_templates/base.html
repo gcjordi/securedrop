@@ -16,6 +16,8 @@
   <body>
     {% include 'banner_warning_flashed.html' %}
 
+    <div class="content">
+      <div class="container">
         {% block header %}
         <header>
           <a href="{% if 'logged_in' in session %}{{ url_for('main.lookup') }}{% else %}{{ url_for('main.index') }}{% endif %}" class="no-bottom-border">
@@ -52,9 +54,11 @@
 
           {% block body %}{% endblock %}
         </main>
+      </div>
 
       {% block footer %}
       {% include 'footer.html' %}
       {% endblock %}
+    </div>
   </body>
 </html>
