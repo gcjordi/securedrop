@@ -244,3 +244,25 @@ p#max-file-size
   image-rendering: crisp-edges
   margin-bottom: 10px
   margin-top: 5px
+
+#regenerate-submit
+  span
+    font-size: 0
+
+    &:after
+      content: ""
+      display: inline-block
+      background:
+        image: url(/static/i/font-awesome/refresh-white.png)
+        position: center
+        repeat: no-repeat
+        size: contain
+      opacity: 0.9
+      height: 20px
+      width: 20px
+
+  &:hover, &:active
+    span
+      &:active
+        background:
+          image: url(/static/i/font-awesome/refresh-white.png)
