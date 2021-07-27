@@ -39,7 +39,6 @@
     {% include 'banner_warning_flashed.html' %}
 
     <div class="content">
-    <main>
       <div class="grid">
         {% include 'flashed.html' %}
         {# The div `index-wrap` MUST be ordered this way so that the flexbox works on large and small screens
@@ -52,7 +51,7 @@
             </div>
           </header>
 
-          <div class="index-row">
+          <main class="index-row">
             <section class="index-column index-left" aria-labelledby="first-submission-heading">
               <div class="index-column-top-container" aria-label="">
               <h2 id="first-submission-heading" class="welcome-text">
@@ -80,11 +79,10 @@
                 </a>
               </div>
             </section>
-          </div>
+          </main>
         </div>
       {% include 'footer.html' %}
       </div>
-    </main>
     </div>
 
 
