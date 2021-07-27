@@ -54,13 +54,13 @@
   </div>
 
   <div class="pull-right section-spacing">
-    <button type="submit" id="submit-doc-button">
+    <button type="submit" id="submit-doc-button" aria-label="{{ gettext('Submit') }}">
       {{ gettext('SUBMIT') }}
     </button>
 
 
 
-    <a href="{{ url_for('main.lookup') }}" class="btn secondary" id="cancel">
+    <a href="{{ url_for('main.lookup') }}" class="btn secondary" id="cancel" aria-label="{{ gettext('Cancel') }}">
       {{ gettext('CANCEL') }}
     </a>
   </div>
@@ -88,7 +88,7 @@
             <h3 id="delete-heading-{{ reply.filename }}" hidden>Delete reply from {{ reply.date|rel_datetime_format(relative=True) }}?</h3>
             <p>{{ gettext('Delete this reply?') }}
               <a href="#delete">{{ gettext('Cancel') }}</a>
-              <button type="submit" class="danger" id="confirm-delete-reply-button-{{ reply.filename }}">{{ gettext('DELETE') }}</button>
+              <button type="submit" class="danger" id="confirm-delete-reply-button-{{ reply.filename }}" aria-label="{{ gettext('Delete') }}>{{ gettext('DELETE') }}</button>
             </p>
           </dialog>
         </form>
@@ -96,7 +96,7 @@
       </article>
     {% endfor %}
     <form id="delete-all" method="post" action="{{ url_for('main.batch_delete') }}">
-      <a class="btn danger" href="#delete-all-confirm">{{ gettext('DELETE ALL REPLIES') }}</a>
+      <a class="btn danger" href="#delete-all-confirm" aria-label="{{ gettext('Delete All Replies') }}">{{ gettext('DELETE ALL REPLIES') }}</a>
       <input name="csrf_token" type="hidden" value="{{ csrf_token() }}">
       <dialog open id="delete-all-confirm" class="hidden-prompt" aria-labelledby="delete-all-heading">
         <h3 id="delete-all-heading">{{ gettext('Are you finished with the replies?') }}</h3>
