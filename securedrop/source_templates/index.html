@@ -53,13 +53,13 @@
 
           <main class="index-row">
             <section class="index-column index-left" aria-labelledby="first-submission-heading">
-              <div class="index-column-top-container" aria-label="">
+              <div class="index-column-top-container">
               <h2 id="first-submission-heading" class="welcome-text">
                 {{ gettext('First submission') }}
               </h2>
               <p class="extended-welcome-text">{{ gettext('First time submitting to our SecureDrop? Start here.') }}</p>
               </div>
-              <div class="index-column-bottom-container" aria-label="">
+              <div class="index-column-bottom-container">
                 <a href="{{ url_for('main.generate') }}" id="submit-documents-button" class="btn alt" aria-label="{{ gettext('Get Started') }}">
                   {{ gettext('GET STARTED') }}
                 </a>
