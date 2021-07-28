@@ -43,21 +43,21 @@ class TestSourceInterface(
 
 
 class TestDownloadKey(
-    functional_test.FunctionalTest,
-    journalist_navigation_steps.JournalistNavigationStepsMixin,
-):
-    def test_journalist_key_from_source_interface(self):
-        data = self.return_downloaded_content(
-            self.source_location + "/public-key", None
-        )
+        functional_test.FunctionalTest,
+        journalist_navigation_steps.JournalistNavigationStepsMixin):
 
-        data = data.decode("utf-8")
+    def test_journalist_key_from_source_interface(self):
+        data = self.return_downloaded_content(self.source_location +
+                                              "/public-key", None)
+
+        data = data.decode('utf-8')
         assert "BEGIN PGP PUBLIC KEY BLOCK" in data
 
 
 class TestDuplicateSourceInterface(
-    functional_test.FunctionalTest, source_navigation_steps.SourceNavigationStepsMixin
-):
+        functional_test.FunctionalTest,
+        source_navigation_steps.SourceNavigationStepsMixin):
+
     def get_codename_generate(self):
         return self.driver.find_element_by_css_selector("#codename").text
 
