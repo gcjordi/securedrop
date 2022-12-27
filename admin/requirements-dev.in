@@ -14,4 +14,4 @@ tox
 pexpect
 urllib3>=1.25.9
 pytest-catchlog
-setuptools==56.0.0
+setuptools==65.5.1
